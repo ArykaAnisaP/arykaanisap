@@ -3,9 +3,9 @@ package controller
 import (
 	"net/http"
 
-	"github.com/ArykaAnisaP/arykaanisap/config"
 	inimodel "github.com/ArykaAnisaP/Penggajian/model"
 	inimodule "github.com/ArykaAnisaP/Penggajian/module"
+	"github.com/ArykaAnisaP/arykaanisap/config"
 	"github.com/aiteung/musik"
 	cek "github.com/aiteung/presensi"
 	"github.com/gofiber/fiber/v2"
