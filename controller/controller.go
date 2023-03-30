@@ -2,7 +2,6 @@ package controller
 
 import (
 	"github.com/ArykaAnisaP/arykaanisap/config"
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
 	"github.com/whatsauth/whatsauth"
