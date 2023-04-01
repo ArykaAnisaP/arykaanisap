@@ -3,7 +3,7 @@ module github.com/ArykaAnisaP/arykaanisap
 go 1.20
 
 require (
-	github.com/ArykaAnisaP/Penggajian v0.0.6
+	github.com/ArykaAnisaP/Penggajian v0.0.7
 	github.com/aiteung/atdb v0.0.8
 	github.com/aiteung/musik v0.0.5
 	github.com/aiteung/presensi v0.0.18

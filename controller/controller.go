@@ -27,3 +27,4 @@ func PostWhatsAuthRequest(c *fiber.Ctx) error {
 	}
 
 }
+

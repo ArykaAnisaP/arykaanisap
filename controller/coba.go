@@ -33,6 +33,10 @@ func GetPresensi(c *fiber.Ctx) error {
 	ps := cek.GetPresensiCurrentMonth(config.Ulbimongoconn)
 	return c.JSON(ps)
 }
+func GetAllUang(c *fiber.Ctx) error {
+	ps := inimodule.GetAllUang(config.Ulbimongoconn, "uang")
+	return c.JSON(ps)
+}
 
 func GetAllGajiFromNamaKaryawan(c *fiber.Ctx) error {
 	ps := inimodule.GetGajiFromNamaKaryawan("aryka", config.Ulbimongoconn, "uang")
@@ -106,3 +110,4 @@ func GetPresensiID(c *fiber.Ctx) error {
 	}
 	return c.JSON(ps)
 }
+
