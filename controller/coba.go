@@ -11,7 +11,10 @@ import (
 	"github.com/aiteung/musik"
 	cek "github.com/aiteung/presensi"
 	"github.com/gofiber/fiber/v2"
-	inimodullatihan "github.com/indrariksa/be_presensi/module"
+	inimodell "github.com/indrariksa/be_presensi/model"
+
+	// inimodullatihan "github.com/indrariksa/be_presensi/model"
+	inimodulee "github.com/indrariksa/be_presensi/module"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -76,7 +79,7 @@ func GetAllGajiFromPresensi(c *fiber.Ctx) error {
 }
 
 func GetAllPresensi(c *fiber.Ctx) error {
-	ps := inimodullatihan.GetAllPresensi(config.Ulbimongoconn, "presensi")
+	ps := inimodulee.GetAllPresensi(config.Ulbimongoconn, "presensi")
 	return c.JSON(ps)
 }
 
@@ -95,7 +98,7 @@ func GetPresensiID(c *fiber.Ctx) error {
 			"message": "Invalid id parameter",
 		})
 	}
-	ps, err := inimodullatihan.GetPresensiFromID(objID, config.Ulbimongoconn, "presensi")
+	ps, err := inimodulee.GetPresensiFromID(objID, config.Ulbimongoconn, "presensi")
 	if err != nil {
 		if errors.Is(err, mongo.ErrNoDocuments) {
 			return c.Status(http.StatusNotFound).JSON(fiber.Map{
@@ -111,3 +114,31 @@ func GetPresensiID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
+func InsertData(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var presensi inimodell.Presensi
+	if err := c.BodyParser(&presensi); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodulee.InsertPresensi(db, "presensi",
+		presensi.Longitude,
+		presensi.Latitude,
+		presensi.Location,
+		presensi.Phone_number,
+		presensi.Checkin,
+		presensi.Biodata)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
