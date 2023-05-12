@@ -115,7 +115,7 @@ func GetPresensiID(c *fiber.Ctx) error {
 }
 
 func InsertData(c *fiber.Ctx) error {
-	db := config.Ulbimongoconn
+	db := config.Ulbimongoconn2
 	var presensi inimodell.Presensi
 	if err := c.BodyParser(&presensi); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
