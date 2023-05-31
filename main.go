@@ -25,7 +25,7 @@ import (
 // @contact.name https://github.com/ArykaAnisaP
 // @contact.email arykaanisap22@gmail.com
 
-// @host aryka.herokuapp.com/
+// @host aryka.herokuapp.com
 // @BasePath /
 //@schemes https http
 

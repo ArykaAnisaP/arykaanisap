@@ -88,7 +88,7 @@ definitions:
         example: "08123456789"
         type: string
     type: object
-host: aryka.herokuapp.com/
+host: aryka.herokuapp.com
 info:
   contact:
     email: arykaanisap22@gmail.com
