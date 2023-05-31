@@ -8,7 +8,6 @@ import (
 	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 
-
 	"github.com/whatsauth/whatsauth"
 
 	"github.com/ArykaAnisaP/arykaanisap/url"
@@ -28,7 +27,7 @@ import (
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 // @host localhost:8080
 // @BasePath /
-
+//@schemes https http
 
 func main() {
 	go whatsauth.RunHub()
