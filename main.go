@@ -17,15 +17,15 @@ import (
 	_ "github.com/ArykaAnisaP/arykaanisap/docs"
 )
 
-// @title Fiber Example API
+// @title TES SWAG
 // @version 1.0
-// @description This is a sample swagger for Fiber
-// @termsOfService http://swagger.io/terms/
-// @contact.name API Support
-// @contact.email fiber@swagger.io
-// @license.name Apache 2.0
-// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
-// @host localhost:8080
+// @description This is a sample swagger server
+
+//@contact.name API Support
+// @contact.name https://github.com/ArykaAnisaP
+// @contact.email arykaanisap22@gmail.com
+
+// @host https://aryka.herokuapp.com/
 // @BasePath /
 //@schemes https http
 
