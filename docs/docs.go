@@ -172,10 +172,6 @@ const docTemplate = `{
         "controller.Karyawan": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "123456789"
-                },
                 "hari_kerja": {
                     "type": "array",
                     "items": {
@@ -202,6 +198,7 @@ const docTemplate = `{
                     }
                 },
                 "nama": {
+                    "description": "ID          primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"123456789\"` + "`" + `",
                     "type": "string",
                     "example": "Tes Swagger"
                 },
@@ -214,10 +211,6 @@ const docTemplate = `{
         "controller.Presensi": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "123456789"
-                },
                 "biodata": {
                     "$ref": "#/definitions/controller.Karyawan"
                 },
@@ -235,6 +228,7 @@ const docTemplate = `{
                     "example": "Bandung"
                 },
                 "longitude": {
+                    "description": "ID           primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"123456789\"` + "`" + `",
                     "type": "number",
                     "example": 123.11
                 },
